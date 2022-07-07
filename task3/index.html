@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="KeyValue Employee Website">
+    <link rel="stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <aside>
+        <nav>
+            <div class="logo">
+                <a href="#">
+                    <img src="img/kv logo.png" alt="Company Logo">
+                </a>
+            </div>
+
+            <ul>
+                <li>
+                    <a class="handle" href="#">
+                        <div>
+                            <img src="img/List.png" alt="List Icon">
+                        </div>
+                        <h6>
+                            Employee List
+                        </h6>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="divider"></div>
+
+    <main>
+
+        <section class="title card">
+            <h1>Create Employee</h1>
+        </section>
+
+        <section class="card">
+            <form class="form-con">
+
+                <div class="form-ele">
+                    <label for="ename">Employee Name</label><br>
+                    <input type="text" id="ename" name="ename" placeholder="Employee Name"><br>
+                </div>
+
+                <div class="form-ele">
+                    <label for="eid">Employee ID</label><br>
+                    <input type="text" id="eid" name="eid" placeholder="Employee ID"><br>
+                </div>
+
+                <div class="form-ele">
+                    <label for="email">Email ID</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email ID"><br>
+                </div>
+
+                <div class="form-ele">
+                    <label for="fname">Joining Date</label><br>
+                    <input type="date" id="jdate" name="jdate" placeholder="Joining Date"><br>
+                </div>
+
+                <div class="form-ele">
+                    <label for="role">Role</label><br>
+                    <select name="role" id="role">
+
+                    </select>
+                </div>
+
+                <div class="form-ele">
+                    <label for="status">Status</label><br>
+                    <select name="status" id="status">
+
+                    </select>
+                </div>
+
+                <div class="form-ele">
+                    <label for="exp">Experience</label><br>
+                    <input type="text" id="exp" name="exp" placeholder="Experience"><br>
+                </div>
+
+                <div class="form-ele">
+                    <label for="addr">Address</label><br>
+                    <input type="text" id="addr" name="addr" placeholder="Address"><br>
+                </div>
+
+                <div class="form-ele">
+                    <label for="idfile">Upload ID Proof</label><br>
+                    <input type="file" id="idfile" name="idfile"><br>
+                </div>
+
+                <div class="form-btns">
+                <input id="create" class="btn btn-primary" type="submit" value="Create">
+                <input id="cancel" class="btn btn-secondary" type="button" value="Cancel">
+                </div>
+
+            </form>
+        </section>
+    </main>
+    
+</body>
+
+<script>
+    function myFunc(){
+        document.getElementById("testp").innerHTML = "Button Clicked!"
+    }
+</script>
+
+</html>
