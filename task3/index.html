@@ -63,20 +63,27 @@
 
                 <div class="form-ele">
                     <label for="fname">Joining Date</label><br>
-                    <input type="date" id="jdate" name="jdate" placeholder="Joining Date"><br>
+                    <input type="text" onfocus="(this.type='date')"
+                    onblur="(this.type='text')" id="jdate" name="jdate" placeholder="Joining Date"><br>
                 </div>
 
                 <div class="form-ele">
                     <label for="role">Role</label><br>
                     <select name="role" id="role">
-
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="inactive">InActive</option>
                     </select>
                 </div>
 
                 <div class="form-ele">
                     <label for="status">Status</label><br>
                     <select name="status" id="status">
-
+                        <option value="developer">Developer</option>
+                        <option value="tester">Tester</option>
+                        <option value="devops">DevOps</option>
+                        <option value="designer">Designer</option>
+                        <option value="hr manager">HR Manager</option>
                     </select>
                 </div>
 
