@@ -70,15 +70,17 @@
                 <div class="form-ele">
                     <label for="role">Role</label><br>
                     <select name="role" id="role">
+                        <option value="" disabled selected>Choose Role</option>
                         <option value="active">Active</option>
                         <option value="pending">Pending</option>
-                        <option value="inactive">InActive</option>
+                        <option value="inactive">Inactive</option>
                     </select>
                 </div>
 
                 <div class="form-ele">
                     <label for="status">Status</label><br>
                     <select name="status" id="status">
+                        <option value="" disabled selected>Status</option>
                         <option value="developer">Developer</option>
                         <option value="tester">Tester</option>
                         <option value="devops">DevOps</option>
@@ -101,12 +103,12 @@
                     <label for="idfile">Upload ID Proof</label><br>
                     <input type="file" id="idfile" name="idfile"><br>
                     <div class="custom-file">
-                    <label for="idfile">
+                    <label>
                             Choose Files
                     </label>        
-                    <button class="file-btn">
+                    <label class="file-btn" for="idfile">
                         Browse
-                    </button>
+                    </label>
                     </div>
                 </div>
 
