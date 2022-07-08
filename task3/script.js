@@ -50,7 +50,9 @@ function fConsolidate(){
 
 // Submit Debounce
 function debounce(){
-
+    setTimeout(2000);
+    var form = document.getElementById("create");
+    form.addEventListener('submit', fSubmit); 
 }
 
 // Change Submit Button Color
