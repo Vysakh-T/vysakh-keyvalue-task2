@@ -24,6 +24,14 @@ function fValidate(){
 function fConsolidate(){
     var inObj = {
         name : document.getElementById("ename").value,
+        id : document.getElementById("eid").value,
+        email : document.getElementById("email").value,
+        date : document.getElementById("jdate").value,
+        role : document.getElementById("role").value,
+        status : document.getElementById("status").value,
+        experience : document.getElementById("exp").value,
+        address : document.getElementById("addr").value,
+        idproof : document.getElementById("idfile").value,
     }
     return inObj;
 }
