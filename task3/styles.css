@@ -149,6 +149,8 @@ aside{
     color: #8a8a8a;
 }
 
+/* Custom Chevron */
+
 .form-ele>.c-down{
     position: absolute;
     right: 15%;
