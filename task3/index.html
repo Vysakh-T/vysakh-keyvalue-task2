@@ -49,7 +49,7 @@
         </section>
 
         <section class="card">
-            <form name="Ecreate" onsubmit="fSubmit()" class="form-con">
+            <form name="Ecreate" id="Ecreate" class="form-con">
 
                 <div class="form-ele">
                     <label for="ename">Employee Name</label><br>
@@ -76,22 +76,24 @@
                     <label for="role">Role</label><br>
                     <select name="role" id="role">
                         <option value="" disabled selected>Choose Role</option>
-                        <option value="active">Active</option>
-                        <option value="pending">Pending</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
-                </div>
-
-                <div class="form-ele">
-                    <label for="status">Status</label><br>
-                    <select name="status" id="status">
-                        <option value="" disabled selected>Status</option>
                         <option value="developer">Developer</option>
                         <option value="tester">Tester</option>
                         <option value="devops">DevOps</option>
                         <option value="designer">Designer</option>
                         <option value="hr manager">HR Manager</option>
                     </select>
+                    <i class="c-down"></i>
+                </div>
+
+                <div class="form-ele">
+                    <label for="status">Status</label><br>
+                    <select name="status" id="status">
+                        <option value="" disabled selected>Status</option>
+                        <option value="active">Active</option>
+                        <option value="pending">Pending</option>
+                        <option value="inactive">Inactive</option>
+                    </select>
+                    <i class="c-down"></i>
                 </div>
 
                 <div class="form-ele">
@@ -119,7 +121,7 @@
 
                 <div class="form-btns">
                 <input id="create" class="btn btn-primary" type="submit" value="Create">
-                <input id="cancel" class="btn btn-secondary" type="button" value="Cancel">
+                <input id="cancel" class="btn btn-secondary" onclick="" type="button" value="Cancel">
                 </div>
 
             </form>
