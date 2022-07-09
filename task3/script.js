@@ -1,10 +1,10 @@
 var form = document.getElementById("Ecreate");
-form.addEventListener('submit', debounce(fSubmit,2000));
+form.addEventListener('submit', debounce(fSubmit));
 
 // Email Validator
 function emailValidate() {
 
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("email");
     var mailformat = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
     if(email.value.match(mailformat))
@@ -49,15 +49,15 @@ function fConsolidate(){
 }
 
 // Submit Debounce
-function debounce(event, func, delay){
-    let debounceTimer;
-    return function() {
-    const context = this;
-    const args= arguments;
-    clearTimeout(debounceTimer);
-    debounceTimer = setTimeout(() => func.apply(context,args), delay);
-    }
-}
+
+function debounce(func, timeout = 2000){
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+  }
+
 
 // Change Submit Button Color
 function btnColor(){
@@ -67,9 +67,9 @@ function btnColor(){
 
 // Form Handler
 function fSubmit(event) {
-
+    // console.log(event);
     event.preventDefault();
-    if(fValidate){
+    if(fValidate()){
         var a = fConsolidate();
         btnColor();
         console.log(a);
