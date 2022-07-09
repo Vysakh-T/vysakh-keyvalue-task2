@@ -1,10 +1,10 @@
 var form = document.getElementById("Ecreate");
-form.addEventListener('submit', fSubmit);
+form.addEventListener('submit', debounce(fSubmit));
 
 // Email Validator
 function emailValidate() {
 
-    var email = document.getElementById("email").value;
+    var email = document.getElementById("email");
     var mailformat = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
 
     if(email.value.match(mailformat))
@@ -25,7 +25,7 @@ function emailValidate() {
 // Placeholder for validators
 function fValidate(){
 
-    a = emailValidate();
+    let a = emailValidate();
     if(a) {
         return true;
     }
@@ -33,41 +33,46 @@ function fValidate(){
 }
 
 // Form value consolidation
-function fConsolidate(){
-    var inObj = {
-        name : document.getElementById("ename").value,
-        id : document.getElementById("eid").value,
-        email : document.getElementById("email").value,
-        date : document.getElementById("jdate").value,
-        role : document.getElementById("role").value,
-        status : document.getElementById("status").value,
-        experience : document.getElementById("exp").value,
-        address : document.getElementById("addr").value,
-        idproof : document.getElementById("idfile").value,
-    }
-    return inObj;
+function fConsolidate(event){
+    // var inObj = {
+    //     name : document.getElementById("ename").value,
+    //     id : document.getElementById("eid").value,
+    //     email : document.getElementById("email").value,
+    //     date : document.getElementById("jdate").value,
+    //     role : document.getElementById("role").value,
+    //     status : document.getElementById("status").value,
+    //     experience : document.getElementById("exp").value,
+    //     address : document.getElementById("addr").value,
+    //     idproof : document.getElementById("idfile").value,
+    // }
+    let inObj = new FormData(event.target)
+    const value = Object.fromEntries(inObj.entries())
+    return value;
 }
 
 // Submit Debounce
-function debounce(){
-    setTimeout(2000);
-    var form = document.getElementById("create");
-    form.addEventListener('submit', fSubmit); 
-}
+
+function debounce(func, timeout = 2000){
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    };
+  }
+
 
 // Change Submit Button Color
 function btnColor(){
-    sbtn = document.getElementById("create");
+    var sbtn = document.getElementById("create");
     sbtn.classList.add("disabled");
 }
 
 // Form Handler
 function fSubmit(event) {
-
+    // console.log(event);
     event.preventDefault();
-    debounce();
-    if(fValidate){
-        var a = fConsolidate();
+    if(fValidate()){
+        var a = fConsolidate(event);
         btnColor();
         console.log(a);
         return true;
