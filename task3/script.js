@@ -25,7 +25,7 @@ function emailValidate() {
 // Placeholder for validators
 function fValidate(){
 
-    a = emailValidate();
+    let a = emailValidate();
     if(a) {
         return true;
     }
@@ -33,19 +33,21 @@ function fValidate(){
 }
 
 // Form value consolidation
-function fConsolidate(){
-    var inObj = {
-        name : document.getElementById("ename").value,
-        id : document.getElementById("eid").value,
-        email : document.getElementById("email").value,
-        date : document.getElementById("jdate").value,
-        role : document.getElementById("role").value,
-        status : document.getElementById("status").value,
-        experience : document.getElementById("exp").value,
-        address : document.getElementById("addr").value,
-        idproof : document.getElementById("idfile").value,
-    }
-    return inObj;
+function fConsolidate(event){
+    // var inObj = {
+    //     name : document.getElementById("ename").value,
+    //     id : document.getElementById("eid").value,
+    //     email : document.getElementById("email").value,
+    //     date : document.getElementById("jdate").value,
+    //     role : document.getElementById("role").value,
+    //     status : document.getElementById("status").value,
+    //     experience : document.getElementById("exp").value,
+    //     address : document.getElementById("addr").value,
+    //     idproof : document.getElementById("idfile").value,
+    // }
+    let inObj = new FormData(event.target)
+    const value = Object.fromEntries(inObj.entries())
+    return value;
 }
 
 // Submit Debounce
@@ -61,7 +63,7 @@ function debounce(func, timeout = 2000){
 
 // Change Submit Button Color
 function btnColor(){
-    sbtn = document.getElementById("create");
+    var sbtn = document.getElementById("create");
     sbtn.classList.add("disabled");
 }
 
@@ -70,7 +72,7 @@ function fSubmit(event) {
     // console.log(event);
     event.preventDefault();
     if(fValidate()){
-        var a = fConsolidate();
+        var a = fConsolidate(event);
         btnColor();
         console.log(a);
         return true;
