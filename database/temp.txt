@@ -1,0 +1,43 @@
+-- create table Address(
+-- 	zip text primary key,
+-- 	country text,
+-- 	state text,
+-- 	district text,
+-- 	city text
+-- );
+
+-- create table UserDetails(
+-- 	uid integer primary key,
+-- 	name text,
+-- 	phone text,
+-- 	zip text references Address(zip)
+-- );
+
+-- create table Credentials(
+-- 	uid integer references UserDetails(uid),
+-- 	email text,
+-- 	password text
+-- );
+
+-- create table Orders(
+-- 	oid integer primary key,
+-- 	uid integer references UserDetails(uid),
+-- 	zip text references Address(zip)
+-- );
+
+-- create table Products(
+-- 	name text,
+-- 	pid integer unique,
+-- 	description text,
+-- 	price decimal,
+-- 	avail integer,
+-- 	sku text,
+-- 	primary key(pid,sku)
+-- );
+
+-- create table Ord_Prod(
+-- 	oid integer references Orders(oid),
+-- 	pid integer references Products(pid),
+-- 	count integer,
+-- 	primary key(oid,pid)
+-- );

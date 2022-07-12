@@ -1,0 +1,16 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "simple hello world application",
+  "main": "index.js",
+  "scripts": {
+    "start-server": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "vysakh",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1",
+    "typescript": "^4.7.4"
+  }
+}
