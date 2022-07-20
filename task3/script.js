@@ -5,7 +5,9 @@ form.addEventListener('submit', debounce(fSubmit));
 function emailValidate() {
 
     var email = document.getElementById("email");
-    var mailformat = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    var mailformat = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]+$/;
+    // var mailformat = /^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/;
+    // var mailformat = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/
 
     if(email.value.match(mailformat))
     {
